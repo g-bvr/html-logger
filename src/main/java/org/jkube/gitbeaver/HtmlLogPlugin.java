@@ -1,6 +1,8 @@
-    package org.jkube.gitbeaver.htmllog;
+    package org.jkube.gitbeaver;
 
 import org.jkube.gitbeaver.GitBeaver;
+import org.jkube.gitbeaver.htmllog.HtmlLogger;
+import org.jkube.gitbeaver.htmllog.LogsDumpHtmlCommand;
 import org.jkube.gitbeaver.plugin.SimplePlugin;
 import org.jkube.logging.Log;
 
