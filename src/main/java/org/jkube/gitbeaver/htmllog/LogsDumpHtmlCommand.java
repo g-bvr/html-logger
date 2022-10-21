@@ -18,7 +18,6 @@ public class LogsDumpHtmlCommand extends AbstractCommand {
     @Override
     public void execute(Map<String, String> variables, WorkSpace workSpace, List<String> arguments) {
         String logs = GitBeaver.getApplicationLogger(variables).getCollectedLogs(HtmlLogger.class.getName());
-        Log.log("Logs: {}",logs);
         FileUtil.store(workSpace.getAbsolutePath(arguments.get(0)), logs);
     }
 
