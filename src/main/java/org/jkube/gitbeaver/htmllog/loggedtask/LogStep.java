@@ -69,11 +69,11 @@ public class LogStep {
 	public HTMLColor getColor() {
 		return switch (state) {
 			case DIDNOTHING -> HTMLColor.GRAY;
-			case DIDSOMETHING -> HTMLColor.WHITE;
-			case ERROR -> HTMLColor.GRAY;
+			case DIDSOMETHING -> HTMLColor.GREEN;
+			case ERROR -> HTMLColor.RED;
 			case WARNING -> HTMLColor.YELLOW;
 			case SUCCESS -> HTMLColor.GREEN;
-			case RUNNING -> HTMLColor.CYAN;
+			case RUNNING -> HTMLColor.BLUE;
 		};
 	}
 
