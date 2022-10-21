@@ -28,7 +28,7 @@ public class LogMessage implements LogItem {
 	}
 
 	@Override
-	public void log(String user, HTMLSection section) {
+	public void log(boolean adminUser, HTMLSection section) {
 		section.addParagraph(text, color);
 	}
 

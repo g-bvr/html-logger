@@ -5,22 +5,23 @@ import org.jkube.gitbeaver.htmllog.html.HTMLConsole;
 import org.jkube.gitbeaver.htmllog.html.HTMLSection;
 import org.jkube.gitbeaver.htmllog.loggedtask.ConsoleLine;
 import org.jkube.gitbeaver.htmllog.loggedtask.LogItem;
-import org.jkube.gitbeaver.htmllog.loggedtask.LoggedTask;
+import org.jkube.gitbeaver.htmllog.loggedtask.LogStep;
+import org.jkube.gitbeaver.interfaces.LogConsole;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class LogConsole implements LogItem {
+public class HtmlLogConsole implements LogConsole, LogItem {
 
 	public static final HTMLColor COMMAND_COLOR = HTMLColor.CYAN;
 
 	private final List<ConsoleLine> lines;
 
-	public LogConsole() {
+	public HtmlLogConsole() {
 		this.lines = new ArrayList<>();
 	}
 
-	public LogConsole(List<ConsoleLine> lines) {
+	public HtmlLogConsole(List<ConsoleLine> lines) {
 		this.lines = lines;
 	}
 
@@ -29,10 +30,10 @@ public class LogConsole implements LogItem {
 	}
 
 	@Override
-	public void log(String user, HTMLSection section) {
+	public void log(boolean adminUser, HTMLSection section) {
 		HTMLConsole console = section.addConsole();
 		lines.forEach(l -> {
-			if (user.equals(LoggedTask.ADMIN) || !l.adminOnly()) {
+			if (adminUser || !l.adminOnly()) {
 				console.addLine(l.getText(), l.getColor());
 			}
 		});
@@ -46,7 +47,7 @@ public class LogConsole implements LogItem {
 		lines.add(new ConsoleLine(line, color, true));
 	}
 
-	public void add(String line) {
+	public void log(String line) {
 		add(line, null);
 	}
 

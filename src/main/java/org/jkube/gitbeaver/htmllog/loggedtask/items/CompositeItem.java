@@ -44,8 +44,8 @@ public class CompositeItem implements LogItem {
 	}
 
 	@Override
-	public void log(String user, HTMLSection section) {
-		putItems(user, section.addSubSection(title, color));
+	public void log(boolean adminUser, HTMLSection section) {
+		putItems(adminUser, section.addSubSection(title, color));
 	}
 
 	public void message(String text) {
@@ -60,8 +60,8 @@ public class CompositeItem implements LogItem {
 		addItem(new LogMessage(text, HTMLColor.RED));
 	}
 
-	public LogConsole addConsole() {
-		LogConsole res = new LogConsole();
+	public HtmlLogConsole addConsole() {
+		HtmlLogConsole res = new HtmlLogConsole();
 		addItem(res);
 		return res;
 	}
@@ -70,8 +70,8 @@ public class CompositeItem implements LogItem {
 		items.add(item);
 	}
 
-	private void putItems(String user, HTMLSection section) {
-		items.forEach(item -> item.log(user, section));
+	private void putItems(boolean adminUser, HTMLSection section) {
+		items.forEach(item -> item.log(adminUser, section));
 	}
 
 	public CompositeItem section(String title) {
