@@ -1,11 +1,11 @@
 package org.jkube.gitbeaver.htmllog;
 
+import org.jkube.gitbeaver.applicationlog.StepState;
 import org.jkube.gitbeaver.htmllog.loggedtask.LogStep;
 import org.jkube.gitbeaver.interfaces.ApplicationLogger;
 import org.jkube.gitbeaver.interfaces.LogConsole;
-import org.jkube.gitbeaver.applicationlog.StepState;
 
-import java.util.*;
+import java.util.LinkedList;
 
 public class HtmlLogger implements ApplicationLogger {
 

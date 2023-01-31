@@ -1,10 +1,9 @@
 package org.jkube.gitbeaver.htmllog.loggedtask;
 
+import org.jkube.gitbeaver.applicationlog.StepState;
 import org.jkube.gitbeaver.htmllog.html.*;
 import org.jkube.gitbeaver.htmllog.loggedtask.items.HtmlLogConsole;
 import org.jkube.gitbeaver.htmllog.loggedtask.items.LogMessage;
-import org.jkube.gitbeaver.applicationlog.StepState;
-import org.jkube.gitbeaver.interfaces.LogConsole;
 
 import java.util.ArrayList;
 import java.util.List;

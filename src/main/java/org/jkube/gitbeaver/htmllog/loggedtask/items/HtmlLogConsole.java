@@ -5,7 +5,6 @@ import org.jkube.gitbeaver.htmllog.html.HTMLConsole;
 import org.jkube.gitbeaver.htmllog.html.HTMLSection;
 import org.jkube.gitbeaver.htmllog.loggedtask.ConsoleLine;
 import org.jkube.gitbeaver.htmllog.loggedtask.LogItem;
-import org.jkube.gitbeaver.htmllog.loggedtask.LogStep;
 import org.jkube.gitbeaver.interfaces.LogConsole;
 
 import java.util.ArrayList;
