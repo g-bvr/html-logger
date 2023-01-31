@@ -11,14 +11,18 @@ import java.util.Map;
 
 public class LogsDumpHtmlCommand extends AbstractCommand {
 
+    private static final String FILE = "file";
+
     public LogsDumpHtmlCommand() {
-        super(1, 1, "logs", "dump", "html", "to");
+        super("Store logs into a html file");
+        commandline("WRITE HTML LOGS INTO "+FILE);
+        argument(FILE, "the path (relative to current workspace) of the file into which the logs shall be written");
     }
 
     @Override
-    public void execute(Map<String, String> variables, WorkSpace workSpace, List<String> arguments) {
+    public void execute(Map<String, String> variables, WorkSpace workSpace, Map<String, String> arguments) {
         String logs = GitBeaver.getApplicationLogger(variables).getCollectedLogs(HtmlLogger.class.getName());
-        FileUtil.store(workSpace.getAbsolutePath(arguments.get(0)), logs);
+        FileUtil.store(workSpace.getAbsolutePath(arguments.get(FILE)), logs);
     }
 
 
