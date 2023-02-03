@@ -1,4 +1,4 @@
-# Repository g-bvr/file-resolver
+# Repository g-bvr/html-logger
 
 This repository defines a plugin that can be used to enhance the built-in set of commands
 to allow collection of logs and providing collected logs as hierarchically organised html file.
