@@ -7,11 +7,11 @@ import org.jkube.gitbeaver.util.FileUtil;
 
 import java.util.Map;
 
-public class LogsDumpHtmlCommand extends AbstractCommand {
+public class WriteHtmlLogsCommand extends AbstractCommand {
 
     private static final String FILE = "file";
 
-    public LogsDumpHtmlCommand() {
+    public WriteHtmlLogsCommand() {
         super("Store logs into a html file");
         commandline("WRITE HTML LOGS INTO "+FILE);
         argument(FILE, "the path (relative to current workspace) of the file into which the logs shall be written");
