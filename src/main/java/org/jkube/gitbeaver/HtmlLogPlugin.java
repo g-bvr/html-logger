@@ -8,7 +8,9 @@
 public class HtmlLogPlugin extends SimplePlugin {
 
     public HtmlLogPlugin() {
-        super(
+        super("""
+                        Allows collection of logs and providing collected logs as hierarchically organised html file
+                        """,
                 LogsDumpHtmlCommand.class
         );
     }
