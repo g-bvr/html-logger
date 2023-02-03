@@ -21,4 +21,4 @@ is provided by E. Breuninger GmbH & Co. in the public repository
 
 ## Documentation of defined commands
 
-A list of all commands defined by this plugin can be found in this [automatically generated documentation](https://htmlpreview.github.io/?https://raw.githubusercontent.com/g-bvrhtml-logger/main/doc/HtmlLogPlugin.html). 
+A list of all commands defined by this plugin can be found in this [automatically generated documentation](https://htmlpreview.github.io/?https://raw.githubusercontent.com/g-bvr/html-logger/main/doc/HtmlLogPlugin.html). 
