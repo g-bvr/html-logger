@@ -4,6 +4,7 @@ import org.jkube.gitbeaver.applicationlog.StepState;
 import org.jkube.gitbeaver.htmllog.html.*;
 import org.jkube.gitbeaver.htmllog.loggedtask.items.HtmlLogConsole;
 import org.jkube.gitbeaver.htmllog.loggedtask.items.LogMessage;
+import org.jkube.gitbeaver.htmllog.loggedtask.items.SubStepLogItem;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -57,6 +58,7 @@ public class LogStep {
 		addItem(res);
 		return res;
 	}
+
 	public List<String> getFailedLeaves(String user) {
 		List<String> res = new ArrayList<>();
 		if (StepState.ERROR.equals(state)) {
@@ -108,5 +110,9 @@ public class LogStep {
 
 	public void combineState(StepState state) {
 		this.state = this.state.combine(state);
+	}
+
+	public void addSubStep(LogStep subStep) {
+		items.add(new SubStepLogItem(subStep));
 	}
 }

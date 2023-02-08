@@ -27,6 +27,9 @@ public class HtmlLogger implements ApplicationLogger {
     @Override
     public void createStep(String title) {
         LogStep step = new LogStep(title, stepStack.size());
+        if (!stepStack.isEmpty()) {
+            stepStack.getLast().addSubStep(step);
+        }
         stepStack.push(step);
     }
 
