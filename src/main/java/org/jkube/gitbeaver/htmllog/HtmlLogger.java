@@ -9,9 +9,11 @@ import java.util.LinkedList;
 
 public class HtmlLogger implements ApplicationLogger {
 
+    private final String runId;
     private final LinkedList<LogStep> stepStack = new LinkedList<>();
 
     public HtmlLogger(String runId) {
+        this.runId = runId;
         createStep(runId);
     }
 
@@ -45,6 +47,8 @@ public class HtmlLogger implements ApplicationLogger {
 
     @Override
     public String getCollectedLogs() {
+        System.out.println("Step stack for logger for run="+runId);
+        stepStack.forEach(step -> System.out.println(step));
         return stepStack.getFirst().createLog(true, "This is the log").toString();
     }
 

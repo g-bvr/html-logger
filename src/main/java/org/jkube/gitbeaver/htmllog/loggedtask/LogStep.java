@@ -115,4 +115,9 @@ public class LogStep {
 	public void addSubStep(LogStep subStep) {
 		items.add(new SubStepLogItem(subStep));
 	}
+
+	@Override
+	public String toString() {
+		return "Level "+level+": "+level+" state:"+state+" #items: "+items.size()+" title:"+title;
+	}
 }
