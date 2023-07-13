@@ -23,14 +23,14 @@ public class HtmlLogger implements ApplicationLogger {
     }
 
     private LogStep currentStep() {
-        return stepStack.peekLast();
+        return stepStack.peek();
     }
 
     @Override
     public void createStep(String title) {
         LogStep step = new LogStep(title, stepStack.size());
         if (!stepStack.isEmpty()) {
-            stepStack.getLast().addSubStep(step);
+            currentStep().addSubStep(step);
         }
         stepStack.push(step);
     }
@@ -48,8 +48,8 @@ public class HtmlLogger implements ApplicationLogger {
     @Override
     public String getCollectedLogs() {
         System.out.println("Step stack for logger for run="+runId);
-        stepStack.forEach(step -> System.out.println(step));
-        return stepStack.getFirst().createLog(true, "This is the log").toString();
+        stepStack.forEach(System.out::println);
+        return stepStack.getLast().createLog(true, "This is the log").toString();
     }
 
     @Override
