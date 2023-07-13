@@ -42,7 +42,11 @@ public class HtmlLogger implements ApplicationLogger {
 
     @Override
     public void closeStep() {
-        stepStack.pop().closeStep();
+        LogStep step = stepStack.pop();
+        if (step.getState() == StepState.RUNNING) {
+            step.combineState(StepState.SUCCESS);
+        }
+        step.closeStep();
     }
 
     @Override
