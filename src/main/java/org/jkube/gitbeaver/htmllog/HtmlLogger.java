@@ -53,7 +53,7 @@ public class HtmlLogger implements ApplicationLogger {
     public String getCollectedLogs() {
         //System.out.println("Step stack for logger for run="+runId);
         //stepStack.forEach(System.out::println);
-        return stepStack.getLast().createLog(true, "This is the log").toString();
+        return stepStack.getLast().createLog(true, "Log of provisioning run").toString();
     }
 
     @Override
